@@ -82,7 +82,7 @@ class Draw {
       const isTempFile = /^wxfile:\/\//.test(img)
       const isNetworkFile = /^https?:\/\//.test(img)
 
-      if (isTempFile) {
+      if (isTempFile || this.use2dCanvas) {
         _drawImage(img)
       } else if (isNetworkFile) {
         wx.downloadFile({
